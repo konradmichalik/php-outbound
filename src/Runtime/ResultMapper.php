@@ -172,7 +172,7 @@ final readonly class ResultMapper
         return new RawResponse(
             $result->status,
             $result->headers,
-            static fn (): string => null !== $response ? $response->getContent(false) : $result->body,
+            static fn (): string => $response?->getContent(false) ?? $result->body,
             static function () use ($response, $result): iterable {
                 if (null === $response) {
                     yield $result->body;
