@@ -1,0 +1,107 @@
+<?php
+
+declare(strict_types=1);
+
+/*
+ * This file is part of the "php-outbound" Composer package.
+ *
+ * (c) 2026 Konrad Michalik <hej@konradmichalik.dev>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace KonradMichalik\Outbound\Tests\Unit\Auth;
+
+use KonradMichalik\Outbound\Auth\TokenProvider;
+use KonradMichalik\Outbound\Context\SapiExecutionContext;
+use KonradMichalik\Outbound\Exception\{ApiTransportFailed, ApiUnauthorized};
+use KonradMichalik\Outbound\Outbound;
+use KonradMichalik\Outbound\Proxy\FileProxyStore;
+use KonradMichalik\Outbound\Testing\MockTransport;
+use KonradMichalik\Outbound\Tests\Support\FakeClock;
+use KonradMichalik\Outbound\Tests\Unit\Fixtures\TokenBudgetApi;
+use PHPUnit\Framework\Attributes\{CoversClass, Test};
+use PHPUnit\Framework\TestCase;
+
+require_once __DIR__.'/../Fixtures/BudgetDefinitions.php';
+
+/**
+ * TokenBudgetTest.
+ *
+ * Symfony treats a max_duration of 0 as unlimited, so an exhausted web budget must stop
+ * the token request instead of sending it without any time limit.
+ *
+ * @author Konrad Michalik <hej@konradmichalik.dev>
+ */
+#[CoversClass(TokenProvider::class)]
+final class TokenBudgetTest extends TestCase
+{
+    #[Test]
+    public function noTokenIsRequestedOnceTheWebBudgetIsExhausted(): void
+    {
+        $clock = new FakeClock();
+        $mock = new MockTransport();
+        $mock->onKey('token_budget::token')->respondWithJson(['access_token' => 'first', 'expires_in' => 31])->respondWithJson(['access_token' => 'second', 'expires_in' => 31]);
+        $mock->on(TokenBudgetApi::class, 'find')->respondWithJson('one')->respondWithJson('two');
+        $api = Outbound::create([TokenBudgetApi::class])
+            ->withTransport($mock)
+            ->withClock($clock)
+            ->withExecutionContext(new SapiExecutionContext(true))
+            ->withProxyStore(new FileProxyStore(sys_get_temp_dir().'/outbound-test-proxies'))
+            ->api(TokenBudgetApi::class);
+        $api->find(1);
+        $clock->advance(9.0);
+
+        try {
+            $api->find(2);
+            self::fail('The exhausted budget must stop the call.');
+        } catch (ApiTransportFailed) {
+        }
+
+        self::assertCount(1, array_filter($mock->calls(), static fn ($call): bool => 'token_budget::token' === $call->endpoint));
+    }
+
+    #[Test]
+    public function aPersistent401KeepsTheFreshToken(): void
+    {
+        $mock = new MockTransport();
+        $mock->onKey('token_budget::token')->respondWithJson(['access_token' => 'first', 'expires_in' => 3600])->respondWithJson(['access_token' => 'second', 'expires_in' => 3600])->respondWithJson(['access_token' => 'third', 'expires_in' => 3600]);
+        $mock->on(TokenBudgetApi::class, 'find')->respondWith(401)->respondWith(401)->respondWithJson('one');
+        $api = Outbound::create([TokenBudgetApi::class])
+            ->withTransport($mock)
+            ->withClock(new FakeClock())
+            ->withExecutionContext(new SapiExecutionContext(false))
+            ->withProxyStore(new FileProxyStore(sys_get_temp_dir().'/outbound-test-proxies'))
+            ->api(TokenBudgetApi::class);
+
+        try {
+            $api->find(1);
+            self::fail('A persistent 401 must fail.');
+        } catch (ApiUnauthorized) {
+        }
+        $api->find(2);
+
+        self::assertCount(2, array_filter($mock->calls(), static fn ($call): bool => 'token_budget::token' === $call->endpoint));
+    }
+
+    #[Test]
+    public function aLifetimeSentAsStringIsHonoured(): void
+    {
+        $clock = new FakeClock();
+        $mock = new MockTransport();
+        $mock->onKey('token_budget::token')->respondWithJson(['access_token' => 'first', 'expires_in' => '3600'])->respondWithJson(['access_token' => 'second', 'expires_in' => '3600']);
+        $mock->on(TokenBudgetApi::class, 'find')->respondWithJson('one')->respondWithJson('two');
+        $api = Outbound::create([TokenBudgetApi::class])
+            ->withTransport($mock)
+            ->withClock($clock)
+            ->withExecutionContext(new SapiExecutionContext(false))
+            ->withProxyStore(new FileProxyStore(sys_get_temp_dir().'/outbound-test-proxies'))
+            ->api(TokenBudgetApi::class);
+        $api->find(1);
+        $clock->advance(600.0);
+        $api->find(2);
+
+        self::assertCount(1, array_filter($mock->calls(), static fn ($call): bool => 'token_budget::token' === $call->endpoint));
+    }
+}

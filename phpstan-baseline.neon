@@ -1,0 +1,439 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$items of method KonradMichalik\\Outbound\\Codegen\\DtoGenerator\:\:merge\(\) expects list\<mixed\>, non\-empty\-array\<mixed, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Codegen/DtoGenerator.php
+
+		-
+			message: '#^Cannot access offset ''200''\|''201''\|''202'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cannot access offset ''clientCredentials'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 2
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cannot access offset ''schema'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cannot access offset ''schemas'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cannot access offset ''securitySchemes'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cannot access offset ''title'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cannot access offset ''tokenUrl'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cannot access offset 0 on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 3
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Class cognitive complexity is 129, keep it under 40$#'
+			identifier: complexity.classLike
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Codegen\\OpenApiGenerator\:\:base\(\)" is 16, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Codegen\\OpenApiGenerator\:\:commonPrefix\(\)" is 12, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Codegen\\OpenApiGenerator\:\:method\(\)" is 35, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Codegen\\OpenApiGenerator\:\:operationsByTag\(\)" is 11, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Codegen\\OpenApiGenerator\:\:phpType\(\)" is 11, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Codegen\\OpenApiGenerator\:\:requestBody\(\)" is 15, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Method KonradMichalik\\Outbound\\Codegen\\OpenApiGenerator\:\:operationsByTag\(\) should return array\<string, list\<array\{path\: string, method\: string, operation\: array\<string, mixed\>\}\>\> but returns array\<string, non\-empty\-list\<array\{path\: string, method\: ''delete''\|''get''\|''patch''\|''post''\|''put'', operation\: non\-empty\-array\<mixed\>\}\>\>\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Parameter \#1 \$callback of function array_map expects \(callable\(mixed\)\: mixed\)\|null, Closure\(bool\|float\|GMP\|int\|resource\|string\|null\)\: string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Parameter \#1 \$parameter of method KonradMichalik\\Outbound\\Codegen\\OpenApiGenerator\:\:style\(\) expects array\<string, mixed\>, array\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Parameter \#1 \$schema of method KonradMichalik\\Outbound\\Codegen\\OpenApiGenerator\:\:phpType\(\) expects array\<string, mixed\>, array\<mixed, mixed\> given\.$#'
+			identifier: argument.type
+			count: 6
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Parameter \#2 \$schema of method KonradMichalik\\Outbound\\Codegen\\OpenApiGenerator\:\:schema\(\) expects array\<string, mixed\>, array\<mixed, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Codegen/OpenApiGenerator.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Command\\CallCommand\:\:execute\(\)" is 32, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Command/CallCommand.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Command\\DebugCommand\:\:execute\(\)" is 13, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Command/DebugCommand.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 4
+			path: src/Command/GenerateCommand.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Command\\HealthCommand\:\:execute\(\)" is 16, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Command/HealthCommand.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Command\\LintCommand\:\:execute\(\)" is 29, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Command/LintCommand.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 4
+			path: src/Command/MakeDtoCommand.php
+
+		-
+			message: '#^Using \$_SERVER is forbidden, Use PSR\-7 API instead\.$#'
+			identifier: disallowed.variable
+			count: 1
+			path: src/Context/ValueResolver.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\DependencyInjection\\OutboundServices\:\:interfaceIn\(\)" is 13, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/DependencyInjection/OutboundServices.php
+
+		-
+			message: '#^Class cognitive complexity is 52, keep it under 40$#'
+			identifier: complexity.classLike
+			count: 1
+			path: src/Format/JsonApi.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Format\\JsonApi\:\:error\(\)" is 17, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Format/JsonApi.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Format\\PlainJson\:\:error\(\)" is 20, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Format/PlainJson.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Http\\QuerySerializer\:\:pairs\(\)" is 14, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Http/QuerySerializer.php
+
+		-
+			message: '#^Class cognitive complexity is 54, keep it under 40$#'
+			identifier: complexity.classLike
+			count: 1
+			path: src/Http/RequestBuilder.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Http\\RequestBuilder\:\:body\(\)" is 15, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Http/RequestBuilder.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Http\\RequestBuilder\:\:build\(\)" is 21, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Http/RequestBuilder.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Mapping\\ValinorMapper\:\:map\(\)" is 13, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Mapping/ValinorMapper.php
+
+		-
+			message: '#^Call to function is_int\(\) with int will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/Metadata/MetadataFactory.php
+
+		-
+			message: '#^Class cognitive complexity is 136, keep it under 40$#'
+			identifier: complexity.classLike
+			count: 1
+			path: src/Metadata/MetadataFactory.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Metadata\\MetadataFactory\:\:connection\(\)" is 14, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Metadata/MetadataFactory.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Metadata\\MetadataFactory\:\:parameters\(\)" is 16, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Metadata/MetadataFactory.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Metadata\\MetadataFactory\:\:validateTags\(\)" is 11, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Metadata/MetadataFactory.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Metadata\\MetadataFactory\:\:validateValues\(\)" is 18, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Metadata/MetadataFactory.php
+
+		-
+			message: '#^Dead catch \- Throwable is never thrown in the try block\.$#'
+			identifier: catch.neverThrown
+			count: 1
+			path: src/Metadata/MetadataFactory.php
+
+		-
+			message: '#^Error suppression via "@" should not be used\.$#'
+			identifier: ergebnis.noErrorSuppression
+			count: 1
+			path: src/Metadata/MetadataFactory.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Metadata\\Registry\:\:build\(\)" is 21, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Metadata/Registry.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Metadata\\TypeResolver\:\:parse\(\)" is 12, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Metadata/TypeResolver.php
+
+		-
+			message: '#^Variable property access on static\(KonradMichalik\\Outbound\\Outbound\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Outbound.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Proxy\\ProxyGenerator\:\:defaultValue\(\)" is 14, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Proxy/ProxyGenerator.php
+
+		-
+			message: '#^Class cognitive complexity is 50, keep it under 40$#'
+			identifier: complexity.classLike
+			count: 1
+			path: src/Runtime/CacheLayer.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Runtime\\CacheLayer\:\:begin\(\)" is 20, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Runtime/CacheLayer.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Runtime\\CacheLayer\:\:complete\(\)" is 11, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Runtime/CacheLayer.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Runtime\\Dispatcher\:\:wait\(\)" is 16, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Runtime/Dispatcher.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Runtime\\Paginator\:\:iterate\(\)" is 33, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Runtime/Paginator.php
+
+		-
+			message: '#^Control structures using switch should not be used\.$#'
+			identifier: ergebnis.noSwitch
+			count: 1
+			path: src/Runtime/Paginator.php
+
+		-
+			message: '#^Class cognitive complexity is 44, keep it under 40$#'
+			identifier: complexity.classLike
+			count: 1
+			path: src/Runtime/ResultMapper.php
+
+		-
+			message: '#^Cognitive complexity for "KonradMichalik\\Outbound\\Runtime\\ResultMapper\:\:raw\(\)" is 14, keep it under 10$#'
+			identifier: complexity.functionLike
+			count: 1
+			path: src/Runtime/ResultMapper.php
+
+		-
+			message: '#^Loose comparison via "\!\=" is not allowed\.$#'
+			identifier: notEqual.notAllowed
+			count: 1
+			path: src/Testing/MockExpectation.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertCount\(\) with 2 and array\{KonradMichalik\\Outbound\\Transport\\Call\} will always evaluate to false\.$#'
+			identifier: staticMethod.impossibleType
+			count: 1
+			path: tests/src/Unit/Auth/TokenLoginTest.php
+
+		-
+			message: '#^Calling putenv\(\) is forbidden, might overwrite existing variables\.$#'
+			identifier: disallowed.function
+			count: 10
+			path: tests/src/Unit/Auth/TokenLoginTest.php
+
+		-
+			message: '#^Calling exec\(\) is forbidden\.$#'
+			identifier: disallowed.function
+			count: 1
+			path: tests/src/Unit/Codegen/CodegenTest.php
+
+		-
+			message: '#^Calling putenv\(\) is forbidden, might overwrite existing variables\.$#'
+			identifier: disallowed.function
+			count: 8
+			path: tests/src/Unit/Context/ValueResolverTest.php
+
+		-
+			message: '#^Calling putenv\(\) is forbidden, might overwrite existing variables\.$#'
+			identifier: disallowed.function
+			count: 2
+			path: tests/src/Unit/Conventions/ConventionsTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertSame\(\) with array\{''Vendor\\\\OneLine…''\} and list\<class\-string\> will always evaluate to false\.$#'
+			identifier: staticMethod.impossibleType
+			count: 1
+			path: tests/src/Unit/DependencyInjection/OutboundCompilerPassTest.php
+
+		-
+			message: '#^Method KonradMichalik\\Outbound\\Tests\\Unit\\Fixtures\\UntypedPathApi\:\:a\(\) has parameter \$id with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: tests/src/Unit/Fixtures/Definitions.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) with ''KonradMichalik\\\\Outbound\\\\Value\\\\Deferred'' and KonradMichalik\\Outbound\\Value\\Deferred\<KonradMichalik\\OutboundPetstore\\Dto\\PetDto\> will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/src/Unit/Petstore/PetstoreTest.php
+
+		-
+			message: '#^Calling exec\(\) is forbidden\.$#'
+			identifier: disallowed.function
+			count: 2
+			path: tests/src/Unit/Proxy/ProxyGeneratorTest.php
+
+		-
+			message: '#^Calling putenv\(\) is forbidden, might overwrite existing variables\.$#'
+			identifier: disallowed.function
+			count: 3
+			path: tests/src/Unit/Runtime/HeaderValueTest.php
+
+		-
+			message: '#^Calling putenv\(\) is forbidden, might overwrite existing variables\.$#'
+			identifier: disallowed.function
+			count: 1
+			path: tests/src/Unit/Security/SecurityTest.php
+
+		-
+			message: '#^Calling eval\(\) is forbidden, eval is evil, please write more code and do not use eval\(\)\.$#'
+			identifier: disallowed.eval
+			count: 1
+			path: tests/src/Unit/Testing/OutboundTestTraitTest.php
+
+		-
+			message: '#^Language construct eval\(\) should not be used\.$#'
+			identifier: ergebnis.noEval
+			count: 1
+			path: tests/src/Unit/Testing/OutboundTestTraitTest.php
+
+		-
+			message: '#^Method KonradMichalik\\Outbound\\Tests\\Unit\\Testing\\OutboundTestTraitTest\:\:getContainer\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: tests/src/Unit/Testing/OutboundTestTraitTest.php

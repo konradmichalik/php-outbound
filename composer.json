@@ -1,0 +1,118 @@
+{
+	"name": "konradmichalik/php-outbound",
+	"description": "Outbound - Declarative API clients for PHP: describe external APIs as interfaces with attributes, with retries, caching, rate limits and safe defaults.",
+	"license": "MIT",
+	"type": "library",
+	"keywords": [
+		"declarative",
+		"api-client",
+		"attributes",
+		"openapi",
+		"http-client",
+		"rest",
+		"outbound"
+	],
+	"authors": [
+		{
+			"name": "Konrad Michalik",
+			"email": "hej@konradmichalik.dev",
+			"homepage": "https://konradmichalik.dev",
+			"role": "Maintainer"
+		}
+	],
+	"homepage": "https://github.com/konradmichalik/php-outbound",
+	"support": {
+		"issues": "https://github.com/konradmichalik/php-outbound/issues",
+		"source": "https://github.com/konradmichalik/php-outbound"
+	},
+	"require": {
+		"php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+		"ext-mbstring": "*",
+		"ext-tokenizer": "*",
+		"cuyz/valinor": "^2.7",
+		"psr/log": "^2.0 || ^3.0",
+		"symfony/console": "^7.4",
+		"symfony/dependency-injection": "^7.4",
+		"symfony/http-client": "^7.4",
+		"symfony/http-client-contracts": "^3.5",
+		"symfony/http-foundation": "^7.4",
+		"symfony/mime": "^7.4",
+		"symfony/rate-limiter": "^7.4.23",
+		"symfony/yaml": "^7.4"
+	},
+	"require-dev": {
+		"armin/editorconfig-cli": "^2.0",
+		"ergebnis/composer-normalize": "^2.42",
+		"ergebnis/phpstan-rules": "^2.13",
+		"konradmichalik/php-cs-fixer-preset": "^0.3.0",
+		"phpstan/phpstan": "^2.1",
+		"phpstan/phpstan-deprecation-rules": "^2.0",
+		"phpstan/phpstan-phpunit": "^2.0",
+		"phpstan/phpstan-strict-rules": "^2.0",
+		"phpunit/phpunit": "^11.5 || ^12.0",
+		"psr/container": "^2.0",
+		"rector/rector": "^2.0",
+		"shipmonk/composer-dependency-analyser": "^1.8",
+		"spaze/phpstan-disallowed-calls": "^4.0",
+		"symfony/config": "^7.4",
+		"tomasvotruba/cognitive-complexity": "^1.0",
+		"tomasvotruba/type-coverage": "^2.5"
+	},
+	"suggest": {
+		"phpunit/phpunit": "Required for OutboundTestTrait."
+	},
+	"autoload": {
+		"psr-4": {
+			"KonradMichalik\\Outbound\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"KonradMichalik\\OutboundPetstore\\": "tests/src/Fixtures/Petstore/",
+			"KonradMichalik\\Outbound\\Tests\\": "tests/src/"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"ergebnis/composer-normalize": true
+		},
+		"platform": {
+			"php": "8.2"
+		},
+		"sort-packages": true
+	},
+	"extra": {
+		"konradmichalik/php-cs-fixer-preset": {
+			"copyright": 2026
+		}
+	},
+	"scripts": {
+		"analyze": "@analyze:dependencies",
+		"analyze:dependencies": "composer-dependency-analyser",
+		"demo": "php -S localhost:8080 -t tests/Demo/public",
+		"fix": [
+			"@fix:composer",
+			"@fix:editorconfig",
+			"@fix:php"
+		],
+		"fix:composer": "@composer normalize",
+		"fix:editorconfig": "@lint:editorconfig --fix",
+		"fix:php": "php-cs-fixer fix",
+		"lint": [
+			"@lint:composer",
+			"@lint:editorconfig",
+			"@lint:php"
+		],
+		"lint:composer": "@fix:composer --dry-run",
+		"lint:editorconfig": "ec",
+		"lint:php": "@fix:php --dry-run",
+		"migration": "@migration:rector",
+		"migration:rector": "rector process -c rector.php",
+		"sca": "@sca:php",
+		"sca:php": "phpstan analyse --memory-limit=2G",
+		"test": "@test:unit",
+		"test:coverage": "XDEBUG_MODE=coverage phpunit -c phpunit.xml",
+		"test:live": "OUTBOUND_LIVE=1 phpunit -c phpunit.xml --testsuite Integration --no-coverage",
+		"test:unit": "phpunit -c phpunit.xml --no-coverage"
+	}
+}

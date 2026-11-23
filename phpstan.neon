@@ -1,0 +1,80 @@
+includes:
+	- phpstan-baseline.neon
+	- vendor/phpstan/phpstan-phpunit/extension.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
+	- vendor/tomasvotruba/type-coverage/config/extension.neon
+	- vendor/tomasvotruba/cognitive-complexity/config/extension.neon
+	- vendor/ergebnis/phpstan-rules/rules.neon
+	- vendor/spaze/phpstan-disallowed-calls/extension.neon
+	- vendor/spaze/phpstan-disallowed-calls/disallowed-dangerous-calls.neon
+	- vendor/spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
+	- vendor/spaze/phpstan-disallowed-calls/disallowed-insecure-calls.neon
+	- vendor/spaze/phpstan-disallowed-calls/disallowed-loose-calls.neon
+
+parameters:
+	level: max
+	scanDirectories:
+		- tests/src/Support
+		- tests/src/Fixtures/Petstore
+	paths:
+		- src
+		- tests/src/Unit
+	tmpDir: .build/phpstan.cache
+	type_coverage:
+		return: 100
+		param: 95
+		property: 95
+		constant: 0
+	cognitive_complexity:
+		class: 40
+		function: 10
+	strictRules:
+		disallowedShortTernary: false
+	type_perfect:
+		no_mixed_property: true
+		no_mixed_caller: true
+		null_over_false: true
+		narrow_param: true
+		narrow_return: true
+	ergebnis:
+		allRules: false
+		declareStrictTypes:
+			enabled: true
+		finalInAbstractClass:
+			enabled: true
+		invokeParentHookMethod:
+			enabled: true
+		noAssignByReference:
+			enabled: true
+		noCompact:
+			enabled: true
+		noErrorSuppression:
+			enabled: true
+		noEval:
+			enabled: true
+		noReturnByReference:
+			enabled: true
+		noSwitch:
+			enabled: true
+		privateInFinalClass:
+			enabled: true
+	disallowedFunctionCalls:
+		-
+			function:
+				- 'dd()'
+				- 'dump()'
+				- 'var_dump()'
+				- 'xdebug_break()'
+				- 'debug()'
+			message: 'Use logging instead or remove if it was for debugging purposes.'
+	disallowedSuperglobals:
+		-
+			superglobal:
+				- '$_GET'
+				- '$_POST'
+				- '$_FILES'
+				- '$_SERVER'
+				- '$_REQUEST'
+				- '$_COOKIE'
+			message: 'Use PSR-7 API instead'
