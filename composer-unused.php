@@ -11,6 +11,8 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-use ComposerUnused\ComposerUnused\Configuration\Configuration;
+use ComposerUnused\ComposerUnused\Configuration\{Configuration, NamedFilter};
 
-return static fn (Configuration $config): Configuration => $config;
+return static fn (Configuration $config): Configuration => $config
+    // NoPrivateNetworkHttpClient needs IpUtils at runtime and only checks for it with class_exists().
+    ->addNamedFilter(NamedFilter::fromString('symfony/http-foundation'));
