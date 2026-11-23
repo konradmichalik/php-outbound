@@ -1,0 +1,6 @@
+{
+	"symbol-whitelist": [
+		"PHPUnit\\Framework\\Assert",
+		"PHPUnit\\Framework\\Attributes\\After"
+	]
+}

@@ -19,3 +19,5 @@
 /docs                     export-ignore
 /AGENTS.md                export-ignore
 /CLAUDE.md                export-ignore
+/composer-require-checker.json export-ignore
+/composer-unused.php      export-ignore
