@@ -45,7 +45,7 @@
 		"ergebnis/composer-normalize": "^2.42",
 		"ergebnis/phpstan-rules": "^2.13",
 		"infection/infection": "^0.32.6",
-		"konradmichalik/php-cs-fixer-preset": "^0.3.0",
+		"konradmichalik/php-cs-fixer-preset": "^0.4.0",
 		"phpstan/phpstan": "^2.1",
 		"phpstan/phpstan-deprecation-rules": "^2.0",
 		"phpstan/phpstan-phpunit": "^2.0",

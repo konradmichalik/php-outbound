@@ -13,11 +13,16 @@ declare(strict_types=1);
 
 use KonradMichalik\PhpCsFixerPreset\Config;
 use KonradMichalik\PhpCsFixerPreset\Rules\Header;
+use KonradMichalik\PhpCsFixerPreset\Rules\Set\RuleSet;
 use Symfony\Component\Finder\Finder;
 
 return Config::create()
     ->withRule(
         Header::fromComposer(),
+    )
+    // assertSame() on DTOs checks identity; the tests compare by value
+    ->withRule(
+        RuleSet::fromArray(['php_unit_strict' => false]),
     )
     ->withFinder(static fn (Finder $finder) => $finder->in(__DIR__)->exclude(['.build', 'vendor']))
 ;
