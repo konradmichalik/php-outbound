@@ -44,6 +44,7 @@
 		"armin/editorconfig-cli": "^2.0",
 		"ergebnis/composer-normalize": "^2.42",
 		"ergebnis/phpstan-rules": "^2.13",
+		"infection/infection": "^0.32.6",
 		"konradmichalik/php-cs-fixer-preset": "^0.3.0",
 		"phpstan/phpstan": "^2.1",
 		"phpstan/phpstan-deprecation-rules": "^2.0",
@@ -74,7 +75,8 @@
 	},
 	"config": {
 		"allow-plugins": {
-			"ergebnis/composer-normalize": true
+			"ergebnis/composer-normalize": true,
+			"infection/extension-installer": false
 		},
 		"platform": {
 			"php": "8.2"
