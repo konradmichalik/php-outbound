@@ -1,5 +1,7 @@
 <div align="center">
 
+![icon](icon.png)
+
 # `php-outbound`
 
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/konradmichalik/php-outbound/php?logo=php)](https://packagist.org/packages/konradmichalik/php-outbound)
