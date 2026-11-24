@@ -7,7 +7,7 @@ Guidance for coding agents working in this repository.
 `konradmichalik/php-outbound` is the framework-agnostic core of Outbound: external APIs are declared as PHP interfaces with attributes, and generated proxies delegate to a runtime that adds resilience, caching and safety. Composer package type `library`, MIT.
 
 - Namespace `KonradMichalik\Outbound\` maps to `src/`, tests use `KonradMichalik\Outbound\Tests\` in `tests/src/`
-- PHP: `~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0` (Composer platform pinned to 8.2)
+- PHP: `~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0 || ~8.6.0` (Composer platform pinned to 8.2)
 - Integrations live in their own packages: [`typo3-outbound`](https://github.com/konradmichalik/typo3-outbound) requires this package. Nothing here may depend on a framework
 
 ## Structure
