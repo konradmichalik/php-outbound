@@ -33,6 +33,9 @@ Declarative API clients for PHP: describe **external APIs as interfaces with att
 
 ## 🔥 Installation
 
+[![Packagist](https://img.shields.io/packagist/v/konradmichalik/php-outbound?label=version&logo=packagist)](https://packagist.org/packages/konradmichalik/php-outbound)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/konradmichalik/php-outbound?color=brightgreen)](https://packagist.org/packages/konradmichalik/php-outbound)
+
 Requires PHP 8.2+ and Symfony components 7.4.
 
 ```bash
