@@ -7,6 +7,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/konradmichalik/php-outbound/php?logo=php)](https://packagist.org/packages/konradmichalik/php-outbound)
 [![CGL](https://img.shields.io/github/actions/workflow/status/konradmichalik/php-outbound/cgl.yml?label=cgl&logo=github)](https://github.com/konradmichalik/php-outbound/actions/workflows/cgl.yml)
 [![Tests](https://img.shields.io/github/actions/workflow/status/konradmichalik/php-outbound/tests.yml?label=tests&logo=github)](https://github.com/konradmichalik/php-outbound/actions/workflows/tests.yml)
+[![Coverage](https://img.shields.io/coverallsCoverage/github/konradmichalik/php-outbound?logo=coveralls)](https://coveralls.io/github/konradmichalik/php-outbound)
 [![License](https://img.shields.io/packagist/l/konradmichalik/php-outbound)](LICENSE)
 
 </div>
